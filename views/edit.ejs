@@ -1,0 +1,76 @@
+<% include partials/header %>
+
+    <div class="ui main text container segment">
+        <!-- <div class="ui center aligned container"> -->
+        <div class="ui huge header">Edit <%= customer.name + ' ' + customer.last%></div>
+        <!-- <h1 style="text-align: center;">Create A New Customer</h1> -->
+        <!-- <div style="width: 30%; margin: 25px auto"> -->
+        <form class="ui form" action="/customers/<%= customer._id %>?_method=PUT" method="POST">
+
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="customer[name]" value="<%= customer.name %>">
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" name="customer[last]" value="<%= customer.last %>">
+            </div>
+            <div class="field">
+                <label>Middle</label>
+                <input type="text" name="customer[middle]" value="<%= customer.middle %>">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="text" name="customer[email]" value="<%= customer.email %>">
+            </div>
+            <div class="field">
+                <label>Phone Number</label>
+                <input type="text" name="customer[phone]" value="<%= customer.phone %>">
+            </div>
+            <div class="field">
+                <label>Company Name</label>
+                <input type="text" name="customer[company]" value="<%= customer.company %>">
+            </div>
+            <div class="field">
+                <label>Type of Business</label>
+                <input type="text" name="customer[typeOfBusiness]" value="<%= customer.typeOfBusiness %>">
+            </div>
+            <div class="field">
+                <label>Address 1</label>
+                <input type="text" name="customer[address_1]" value="<%= customer.address_1 %>">
+            </div>
+            <div class="field">
+                <label>Address 2</label>
+                <input type="text" name="customer[address_2]" value="<%= customer.address_2 %>">
+            </div>
+            <div class="field">
+                <label>City</label>
+                <input type="text" name="customer[city]" value="<%= customer.city %>">
+            </div>
+            <div class="field">
+                <label>State</label>
+                <input type="text" name="customer[state]" value="<%= customer.state %>">
+            </div>
+            <div class="field">
+                <label>Zip Code</label>
+                <input type="text" name="customer[zip]" value="<%= customer.zip %>">
+            </div>
+            <div class="field">
+                <label>Notes</label>
+                <textarea name="customer[notes]"><%= customer.notes %></textarea>
+            </div>
+            <div class="field">
+                <input type="text" name="created" value="<%= customer.created.toDateString() %>">
+            </div>
+            <div class="field">
+                <button class="ui primary button">Submit!</button>
+            </div>
+
+        </form>
+        <a href="/customers">Go Back!</a>
+        <!-- </div>     -->
+        <!-- </div> -->
+
+    </div>
+
+    <% include partials/footer %>

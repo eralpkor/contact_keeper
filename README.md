@@ -1,1 +1,3 @@
-# contact_keeper
+# Contact Keeper
+#
+## Keeping customer information 

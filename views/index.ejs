@@ -1,0 +1,60 @@
+<% include partials/header %>
+
+    <div class="container">
+        
+            <div class="container text-center pb-5 pt-2">
+                <div class="main container ">
+                <h1 class="display-2">Acme Inc.</h1>
+                </div>
+                <h4>All Contacts</h4>
+                <a href="/customers/new">
+                    <button role="button" class="btn btn-dark">Add New Contact
+                    </button>   
+                </a> 
+            </div>
+       
+
+        <div class="card-columns">
+            <% customers.forEach(function(customer){ %>
+                <div class="card">
+                    <div class="card-body">
+                      
+                       
+            
+                <h4 class="card-title">
+                    <%= customer.name + ' ' + customer.middle + ' ' + customer.last%>
+                </h4>
+                
+                <p class="card-text">
+                    <%= customer.email%> <br>
+                    <%= customer.phone%> <br>
+                    <%= customer.address_1 + ' ' + customer.address_2%> <br>
+                    <%= customer.city + ', ' + customer.state%> <br>
+                    <%= customer.zip%> <br>
+                    </p>
+                    <p>Created:
+                        <span>
+                            <%= customer.created%>
+                        </span>
+                    </p>
+
+                   
+                
+                <p>
+                    <a href="/customers/<%= customer._id%>" class="btn btn-dark">More Info</a>
+                </p>
+           
+                    
+        </div>
+
+    </div>
+    <% }); %> <!-- Do not delete -->
+
+        </div>
+        </div>
+
+
+        
+        
+<% include partials/footer %>
+

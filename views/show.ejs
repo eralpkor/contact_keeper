@@ -1,0 +1,30 @@
+<% include partials/header %>
+<div class="container main pt-5">
+
+<div class="card text-white bg-dark mb-3">
+    <div class="card-header"><%=customer.name %></div>
+    <div class="card-body">
+        <h4><%=customer.name + ' ' + customer.middle + ' ' + customer.last%></h4>
+        <p>E-mail: <a href="mailto:<%= customer.email%>"><%= customer.email%></a><br/>
+        Phone: <%= customer.phone%></br>
+        Address:</br>
+        <%=customer.address_1%>
+        <%=customer.address_2%>
+        <%= customer.city + ", " + customer.state + ' ' + customer.zip%></br>
+        Company: <%= customer.company%></br>
+        <%= customer.typeOfBusiness %></br>
+        Notes:</br>
+        <%= customer.notes%></br>
+        Entry created: <%= customer.created.toDateString()%>
+        </p>
+    </div>
+</div>
+
+    <a class="btn btn-primary" href="/customers/<%= customer._id %>/edit">Edit</a>
+    <form id="delete" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+
+</div>
+
+<% include partials/footer %>
