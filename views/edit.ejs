@@ -1,73 +1,76 @@
 <% include partials/header %>
 
-    <div class="ui main text container segment">
-        <!-- <div class="ui center aligned container"> -->
-        <div class="ui huge header">Edit <%= customer.name + ' ' + customer.last%></div>
+    <div class="container mt-5 pt-5">
+        <div class="container">
+            <h1 class="display-4 d-inline"> <%= customer.name + ' ' + customer.last%></h1>
+            <h4 class="d-inline text-right"> Edit mode</h4>
+        </div>
+        
         <!-- <h1 style="text-align: center;">Create A New Customer</h1> -->
         <!-- <div style="width: 30%; margin: 25px auto"> -->
-        <form class="ui form" action="/customers/<%= customer._id %>?_method=PUT" method="POST">
+        <form class="form" action="/customers/<%= customer._id %>?_method=PUT" method="POST">
 
-            <div class="field">
+            <div class="form-group">
                 <label>First Name</label>
-                <input type="text" name="customer[name]" value="<%= customer.name %>">
+                <input type="text" class="form-control form-control-sm" name="customer[name]" value="<%= customer.name %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" name="customer[last]" value="<%= customer.last %>">
+                <input type="text" class="form-control form-control-sm" name="customer[last]" value="<%= customer.last %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Middle</label>
-                <input type="text" name="customer[middle]" value="<%= customer.middle %>">
+                <input type="text" class="form-control form-control-sm" name="customer[middle]" value="<%= customer.middle %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Email</label>
-                <input type="text" name="customer[email]" value="<%= customer.email %>">
+                <input type="text" class="form-control form-control-sm" name="customer[email]" value="<%= customer.email %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Phone Number</label>
-                <input type="text" name="customer[phone]" value="<%= customer.phone %>">
+                <input type="text" class="form-control form-control-sm" name="customer[phone]" value="<%= customer.phone %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Company Name</label>
-                <input type="text" name="customer[company]" value="<%= customer.company %>">
+                <input type="text" class="form-control form-control-sm" name="customer[company]" value="<%= customer.company %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Type of Business</label>
-                <input type="text" name="customer[typeOfBusiness]" value="<%= customer.typeOfBusiness %>">
+                <input type="text" class="form-control form-control-sm" name="customer[typeOfBusiness]" value="<%= customer.typeOfBusiness %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Address 1</label>
-                <input type="text" name="customer[address_1]" value="<%= customer.address_1 %>">
+                <input type="text" class="form-control form-control-sm" name="customer[address_1]" value="<%= customer.address_1 %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Address 2</label>
-                <input type="text" name="customer[address_2]" value="<%= customer.address_2 %>">
+                <input type="text" class="form-control form-control-sm" name="customer[address_2]" value="<%= customer.address_2 %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>City</label>
-                <input type="text" name="customer[city]" value="<%= customer.city %>">
+                <input type="text" class="form-control form-control-sm" name="customer[city]" value="<%= customer.city %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>State</label>
-                <input type="text" name="customer[state]" value="<%= customer.state %>">
+                <input type="text" class="form-control form-control-sm" name="customer[state]" value="<%= customer.state %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Zip Code</label>
-                <input type="text" name="customer[zip]" value="<%= customer.zip %>">
+                <input type="text" class="form-control form-control-sm" name="customer[zip]" value="<%= customer.zip %>">
             </div>
-            <div class="field">
+            <div class="form-group">
                 <label>Notes</label>
-                <textarea name="customer[notes]"><%= customer.notes %></textarea>
+                <textarea class="form-control form-control-sm"  name="customer[notes]"><%= customer.notes %></textarea>
             </div>
-            <div class="field">
-                <input type="text" name="created" value="<%= customer.created.toDateString() %>">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-sm" name="created" value="<%= customer.created.toDateString() %>">
             </div>
-            <div class="field">
-                <button class="ui primary button">Submit!</button>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Submit!</button>
             </div>
 
         </form>
-        <a href="/customers">Go Back!</a>
+        <a class="btn btn-secondary btn-block" href="/customers">Go Back!</a>
         <!-- </div>     -->
         <!-- </div> -->
 

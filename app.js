@@ -25,7 +25,7 @@ const customerSchema = new mongoose.Schema({
     last: String,
     middle: String,
     email: String,
-    phone: Number,
+    phone: String,
     company: String,
     typeOfBusiness: String,
     address_1: String,

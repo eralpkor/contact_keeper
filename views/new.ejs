@@ -2,78 +2,85 @@
 
     <div class="container mt-5 pt-5">
         <!-- <div class="ui center aligned container"> -->
-            <div class="text-center">
+            
 
            
-            <h1 class="display-4">Create a New Entry</h1>
-            <!-- <h1 style="text-align: center;">Create A New Customer</h1> -->
-            <!-- <div style="width: 30%; margin: 25px auto"> -->
+            <h1 class="display-4 mb-5 text-center">Create a New Entry</h1>
             
                 <form class="form" action="/customers" method="POST">
                     <div class="form-group">
-                        <label for="name">First Name</label>
-                        <input class="" type="text" name="name" placeholder="First Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" name="last" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Middle</label>
-                        <input type="text" name="middle" placeholder="Middle Name/initials">
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="name">First Name</label>
+                                <input class="form-control form-control-sm" type="text" name="name" placeholder="First Name">
+                            </div>
+                            <div class="col">
+                                <label>Middle</label>
+                                <input type="text" class="form-control form-control-sm" name="middle" placeholder="Middle Name/initials">
+                            </div>
+                            <div class="col">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control form-control-sm" name="last" placeholder="Last Name">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" name="email" placeholder="E-mail address">
+                        <input type="text" class="form-control form-control-sm" name="email" placeholder="E-mail address">
                     </div>
                     <div class="form-group">
                         <label>Phone Number</label>
-                        <input type="text" name="phone" placeholder="Phone Number">
+                        <input type="text" class="form-control form-control-sm" name="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
                         <label>Company Name</label>
-                        <input type="text" name="company" placeholder="Company Name">
+                        <input type="text" class="form-control form-control-sm" name="company" placeholder="Company Name">
                     </div>
                     <div class="form-group">
                         <label>Type of Business</label>
-                        <input type="text" name="typeOfBusiness" placeholder="Type of Business">
+                        <input type="text" class="form-control form-control-sm" name="typeOfBusiness" placeholder="Type of Business">
                     </div>
                     <div class="form-group">
                         <label>Address 1</label>
-                        <input type="text" name="address_1" placeholder="Address 1">
+                        <input type="text" class="form-control form-control-sm" name="address_1" placeholder="Address 1">
                     </div>
                     <div class="form-group">
                         <label>Address 2</label>
-                        <input type="text" name="address_2" placeholder="Address 2">
+                        <input type="text" class="form-control form-control-sm" name="address_2" placeholder="Address 2">
                     </div>
                     <div class="form-group">
-                        <label>City</label>
-                        <input type="text" name="city" placeholder="City">
+                        <div class="form-row">
+                            <div class="col">
+                                <label>City</label>
+                                <input type="text" class="form-control form-control-sm" name="city" placeholder="City">
+                            </div>
+                            <div class="col">
+                                <label>State</label>
+                                <input type="text" class="form-control form-control-sm" name="state" placeholder="State">
+                            </div>
+                            <div class="col">
+                                <label>Zip Code</label>
+                                <input type="text" class="form-control form-control-sm" name="zip" placeholder="Zip Code">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>State</label>
-                        <input type="text" name="state" placeholder="State">
-                    </div>
-                    <div class="form-group">
-                        <label>Zip Code</label>
-                        <input type="text" name="zip" placeholder="Zip Code">
-                    </div>
+                
                     <div class="form-group">
                         <label>Notes</label>
-                        <textarea name="notes" maxlength="500" placeholder="Maximum length of 500 characters:"></textarea>
+                        <textarea name="notes" class="form-control form-control-lg" maxlength="500" placeholder="Maximum length of 500 characters:"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="date" name="created">
+                        <input type="date" class="form-control" name="created">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-dark">Submit!</button>
+                        <button class="btn btn-dark btn-block">Submit!</button>
                     </div>
 
                 </form>
-                <a href="/customers" class="btn btn-light">Back to Contacts</a>
+                <a href="/customers" class="btn btn-secondary btn-block">Back to Contacts</a>
             <!-- </div>     -->
             <!-- </div> -->
-        </div>
+        
     </div>
 
         <% include partials/footer %>

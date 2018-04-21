@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 .container.center, .container.main, .container.left {
     margin-top: 7em;
     max-width: 90%;
@@ -21,7 +22,7 @@ i.icon {
 }
 
 .signature {
-    position: fixed;
+    /* position: fixed; */
 	bottom: 10px;
 	right: 10px;
 }
