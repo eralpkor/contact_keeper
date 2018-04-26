@@ -27,6 +27,9 @@ i.icon {
 	right: 10px;
 }
 
+.landing-page {
+    background-color: azure;
+}
 .card-columns {
     @include media-breakpoint-only(lg) {
       column-count: 4;

@@ -8,7 +8,7 @@ var express     = require('express'),
     //passport    = require('passport'),
     //LocalStrategy = require('passport-local'),
     //passportLocalMongooseEmail = require('passport-local-mongoose-email'),
-    // Campground = require("./models/customer"),
+    Customer = require("./models/customer"),
     // Comment = require("./models/comment"),
     // User = require("./models/user"),
     //seedDB = require("./seeds")
@@ -17,27 +17,10 @@ mongoose.connect('mongodb://localhost/test');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-//app.use(expressSanitizer());
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
-// SCHEMA SETUP, Mongoose model config
-const customerSchema = new mongoose.Schema({
-    name: String,
-    last: String,
-    middle: String,
-    email: String,
-    phone: String,
-    company: String,
-    typeOfBusiness: String,
-    address_1: String,
-    address_2: String,
-    city: String,
-    state: String,
-    zip: Number,
-    notes: String,
-    created: {type: Date, default: Date.now}
-});
 
-var Customer = mongoose.model('Customer', customerSchema);
+
 // RESTful Routes
 app.get('/', function (req, res) {
     res.render('landing');
@@ -71,6 +54,10 @@ app.post('/customers', function(req, res) {
     var notes = req.body.notes;
     var created = req.body.created;
     var newCustomer = {name, last, middle, email, phone, company, typeOfBusiness, address_1, address_2, city, state, zip, notes, created};
+    console.log(notes);
+    notes = req.sanitize(notes);
+    console.log('--------------');
+    console.log(notes);
 // Create a new customer and save to db
 Customer.create(newCustomer, function(err, newlyCreated) {
     if (err) {
@@ -108,6 +95,7 @@ app.get('/customers/:id/edit', function (req, res) {
 
 // UPDATE Route
 app.put('/customers/:id', function (req, res) {
+    req.body.notes = req.sanitize(req.body.notes);
     Customer.findByIdAndUpdate(req.params.id, req.body.customer, function (err, updatedCustomer) {
         if (err) {
             res.redirect('/customers');
@@ -130,6 +118,11 @@ app.delete('/customers/:id', function (req, res) {
             res.redirect('/customers');
         }
     });
+});
+
+// Help file
+app.get('/help', function(req, res) {
+    res.render('help');
 });
 // Express options
 var PORT = 3000;

@@ -11,7 +11,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('timeClock').innerHTML =
-        M + "/" + d + "/" + y + " " + h + ":" + m + ":" + s;
+        M + "/" + d + "/" + y + " " + h + ":" + m;
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
