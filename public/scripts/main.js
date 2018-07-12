@@ -1,4 +1,4 @@
-console.log('Warning: Dates in calendar are closer than they appear');
+console.log('Warning: Dates in calendar are closer than they appear.');
 
 function startTime() {
     var today = new Date();

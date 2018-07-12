@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eralp",
-  "license": "ISC",
+  "author": "Eralp Kor",
+  "license": "ISC, Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.",
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
